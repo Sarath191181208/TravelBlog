@@ -28,15 +28,15 @@ app.get("/blog", (req, res) => {
 });
 // route to upload an image
 app.post("/upload", (req, res) => {
-    console.log("moving...")
+    // console.log("moving...")
     let file = req.files.image;
     let date = new Date();
     let img_name = date.getDate() + date.getTime() + file.name;
-    console.log(file.name);
+    // console.log(file.name);
     // uploading the image
     file.mv(path.join(initial_path, 'uploads', img_name), (err) => {
         if (err) {
-            console.log(err);
+            console.log("error", err);
             throw err;
             // return res.status(500).send(err);
         }
