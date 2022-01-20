@@ -28,9 +28,11 @@ app.get("/blog", (req, res) => {
 });
 // route to upload an image
 app.post("/upload", (req, res) => {
+    console.log("moving...")
     let file = req.files.image;
     let date = new Date();
-    let img_name = data.getDate() + date.getTime() + file.name;
+    let img_name = date.getDate() + date.getTime() + file.name;
+    console.log(file.name);
     // uploading the image
     file.mv(path.join(initial_path, 'uploads', img_name), (err) => {
         if (err) {
