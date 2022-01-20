@@ -18,6 +18,14 @@ app.use(fileupload());
 app.get("/", (req, res) => {
     res.sendFile(path.join(initial_path, 'home.html'));
 });
+// route for editor.html
+app.get("/editor", (req, res) => {
+    res.sendFile(path.join(initial_path, 'editor.html'));
+});
+//route for blog.html
+app.get("/blog", (req, res) => {
+    res.sendFile(path.join(initial_path, 'blog.html'));
+});
 // route to upload an image
 app.post("/upload", (req, res) => {
     let file = req.files.image;
